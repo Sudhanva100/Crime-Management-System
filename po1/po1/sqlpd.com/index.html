@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#" itemscope itemtype="http://schema.org/">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn SQL while solving crimes! SQL Police Department</title>
+    <meta name="description" content="SQL Police Department is an online game where you solve crimes using SQL (and learn SQL in the process). Learn SQL while playing a game!" />
+    <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240' fill='%23000' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'%0A%3E%3Cpath stroke-width='10' d='M120 220s80-40 80-100V50l-80-30-80 30v70c0 60 80 100 80 100z' fill='none' /%3E%3Cg stroke-width='5' style='font-size: 50px; font-family: sans-serif; letter-spacing: 5px;' %3E%3Ctext x='66' y='100'%3E SQL %3C/text%3E%3Ctext x='85' y='170'%3E PD %3C/text%3E%3C/g%3E%3C/svg%3E"
+    />
+    <link rel="canonical" href="https://sqlpd.com/" />
+    <meta http-equiv="Pragma" content="no-cache" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sqlpd.com/" />
+
+    <meta property="og:image" content="https://sqlpd.com/images/sqlpd-screenshots-1-opt.png" />
+    <meta property="og:title" content="Learn SQL while solving crimes! SQL Police Department" />
+    <meta property="og:description" content="SQL Police Department is an online game where you solve crimes using SQL (and learn SQL in the process). Learn SQL while playing a game!" />
+
+    <meta itemprop="name" content="Learn SQL while solving crimes! SQL Police Department" />
+    <meta itemprop="description" content="SQL Police Department is an online game where you solve crimes using SQL (and learn SQL in the process). Learn SQL while playing a game!" />
+    <meta itemprop="image" content="https://sqlpd.com/images/sqlpd-screenshots-1-opt.png" />
+
+
+
+    <script type="module" crossorigin src="/assets/main-4508b9b1.js"></script>
+    <link rel="stylesheet" href="./assets/index-1852c81a.css">
+</head>
+
+<body>
+    <main>
+        <!-- #show-buy-a-license had to be moved up to use ~ selector in landscape -->
+        <input type="checkbox" id="show-buy-a-license" value="buy-a-license" autocomplete="off" />
+
+        <input type="radio" id="show-login-section" name="workspace-ranktest-and-login" value="login" autocomplete="off" checked />
+        <input type="radio" id="show-workspace-section" name="workspace-ranktest-and-login" value="workspace" autocomplete="off" />
+        <input type="radio" id="show-rank-test-section" name="workspace-ranktest-and-login" value="rank-test" autocomplete="off" />
+        <section class="login">
+            <header>
+                <h1>
+                    <span class="title-sql">SQL</span>
+                    <span>Police</span>
+                    <span>Department</span>
+                </h1>
+                <p class="moto">Where no case goes un-queried</p>
+                <input type="radio" id="show-login-options" name="login-logout-options" value="login" autocomplete="off" checked />
+                <input type="radio" id="show-logout-options" name="login-logout-options" value="logout" autocomplete="off" />
+                <div class="login-options">
+                    <label class="guest-login button try-a-few-cases" for="show-workspace-section">Try a few cases</label
+                        >
+                        <p>
+                            <label class="link-like" for="show-buy-a-license"
+                                >Buy a license</label
+                            >
+                            &nbsp;or&nbsp;
+                            <label class="link-like login-link">Login</label>
+                    </p>
+                </div>
+                <div class="logout-options">
+                    <p>
+                        Welcome back!<br />
+                        <span class="account-email"></span>
+                    </p>
+                    <label class="guest-login button logged-in-continue-cases" for="show-workspace-section">Continue working cases</label
+                        >
+                        <p>
+                            <label class="link-like logout-link">Logout</label>
+                    </p>
+                </div>
+            </header>
+            <footer>
+                <p>
+                    &copy;&nbsp;Wrapped&nbsp;Castle&nbsp;Limited&nbsp;-&nbsp;2020. All&nbsp;rights&nbsp;reserved.
+                </p>
+            </footer>
+        </section>
+        <section class="workspace">
+            <input type="radio" id="show-mission-tab" name="workspace-tab" value="mission" autocomplete="off" checked />
+            <input type="radio" id="show-builder-tab" name="workspace-tab" value="builder" autocomplete="off" />
+            <input type="radio" id="show-results-tab" name="workspace-tab" value="results" autocomplete="off" />
+            <input type="radio" id="show-profile-tab" name="workspace-tab" value="profile" autocomplete="off" />
+            <input type="radio" id="show-reference-tab" name="workspace-tab" value="reference" autocomplete="off" />
+            <input type="radio" id="show-no-sending-modal" name="send-solved-failed" value="show-no-sending-modal" autocomplete="off" />
+            <input type="radio" id="show-sending-modal" name="send-solved-failed" value="show-sending-modal" autocomplete="off" />
+            <input type="radio" id="show-solved-stamp" name="send-solved-failed" value="show-solved-stamp" autocomplete="off" />
+            <input type="radio" id="show-retry-stamp" name="send-solved-failed" value="show-retry-stamp" autocomplete="off" />
+            <input type="checkbox" id="show-copyright-credits" name="show-copyright-credits" value="copyright-credits" autocomplete="off" />
+            <div class="workspace-tabs">
+                <label class="tab" for="show-mission-tab">Brief</label>
+                <label class="tab" for="show-builder-tab">SQL</label>
+                <label class="tab" for="show-results-tab">Results</label>
+                <label class="tab" for="show-reference-tab"><span class="one-two"
+                            ><span class="guide-tab-icon">&nbsp;</span>
+                            &nbsp;Guide</span
+                        ></label
+                    >
+                    <label class="tab" for="show-profile-tab"
+                        ><span class="one-two"
+                            ><span class="profile-tab-icon">&nbsp;</span>
+                            &nbsp;Profile</span
+                        ></label
+                    >
+                </div>
+                <div class="mission">
+                    <h2>Mission Brief</h2>
+                    <p class="classification">- Confidential -</p>
+                    <p class="mission-brief"></p>
+                    <div class="mission-description">
+                        <p class="mission-instructions"></p>
+                        <label
+                            class="button mission-continue"
+                            for="show-builder-tab"
+                            >Continue</label
+                        >
+                        <label class="button mission-submit"
+                            >Submit completed brief</label
+                        >
+                    </div>
+                </div>
+                <div class="results">
+                    <input
+                        type="checkbox"
+                        id="show-results-instructions"
+                        autocomplete="off"
+                        checked
+                    />
+                    <input
+                        type="checkbox"
+                        id="show-no-results-yet-message"
+                        autocomplete="off"
+                        checked
+                    />
+                    <input
+                        type="checkbox"
+                        id="show-empty-result-message"
+                        autocomplete="off"
+                        checked
+                    />
+                    <input
+                        type="radio"
+                        id="show-tag-options"
+                        name="results-tag-popup"
+                        value="tag-options"
+                        autocomplete="off"
+                    />
+                    <input
+                        type="radio"
+                        id="show-updated-statement"
+                        name="results-tag-popup"
+                        value="updated-statement"
+                        autocomplete="off"
+                    />
+                    <p class="results-instructions">
+                        Select a value and tag it with relevant type to complete
+                        the brief.
+                    </p>
+                    <div class="scrollable-container">
+                        <div class="no-results-yet-message">
+                            <p>
+                                No query has been run yet,<br />
+                                no results to show.
+                            </p>
+                            <label class="button" for="show-builder-tab"
+                                >Enter a query</label
+                            >
+                        </div>
+                        <div class="empty-result-message">
+                            <p>
+                                The query didn't return any rows.<br />
+                                Please recheck the conditions.
+                            </p>
+                            <label class="button" for="show-builder-tab"
+                                >Back to query</label
+                            >
+                        </div>
+                        <table class="column-headers"></table>
+                        <table class="rows-data"></table>
+                    </div>
+                    <div class="tag-options">
+                        <p>
+                            Tag &nbsp;<span class="selected-value"></span>&nbsp;
+                            as
+                        </p>
+                        <label class="special-key hide-tag-options"
+                            >&nbsp;</label
+                        >
+                    </div>
+                    <div class="updated-statement">
+                        <p></p>
+                        <label class="button" for="show-mission-tab"
+                            >Review brief</label
+                        >
+                        <label class="special-key hide-tag-options"
+                            >&nbsp;</label
+                        >
+                    </div>
+                    <div class="submit-results">
+                        <label class="button table-submit"
+                            >Submit results</label
+                        >
+                    </div>
+                </div>
+                <div class="builder">
+                    <div class="top-pane">
+                        <div class="query-section">
+                            <div
+                                class="vertical-scrollable-container query-container"
+                            >
+                                <div class="query">
+                                    <span class="cursor"></span
+                                    ><span class="placeholder">
+                                        Build a query by clicking the fragments
+                                        below
+                                        <br />
+                                        Don't know SQL or need a hint?
+                                        <br />
+                                        Check out the guide
+                                        <span class="guide-tab-icon placeholder"
+                                            >&nbsp;</span
+                                        >
+                                        tab!
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="special-keys">
+                                <div>
+                                    <div class="special-key semicolon">
+                                        &nbsp;
+                                    </div>
+                                    <div
+                                        class="special-key execute"
+                                        data-testid="execute-sql"
+                                    >
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- div class="special-key history">&nbsp;</div-->
+                                    <!--div class="special-key sql-reference">&nbsp;</div-->
+                                    <div class="special-key clear-all">
+                                        &nbsp;
+                                    </div>
+                                    <div class="special-key backspace">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-pane">
+                        <div class="extra-tabs">
+                            <input
+                                type="radio"
+                                id="show-builder-mission-brief"
+                                name="extra-keyboard-tab"
+                                value="mission-brief"
+                                autocomplete="off"
+                                checked
+                            />
+                            <div class="keyboard-tabs">
+                                <label
+                                    class="tab"
+                                    for="show-builder-mission-brief"
+                                    >Brief</label
+                                >
+                            </div>
+                            <div class="keyboard-tab builder-mission-brief">
+                                <p class="mission-brief"></p>
+                            </div>
+                        </div>
+                        <div class="keyboard">
+                            <input
+                                type="radio"
+                                id="show-keyboard-keywords"
+                                name="keyboard-tab"
+                                value="keywords"
+                                autocomplete="off"
+                            />
+                            <input
+                                type="radio"
+                                id="show-keyboard-erd"
+                                name="keyboard-tab"
+                                value="erd"
+                                autocomplete="off"
+                                checked
+                            />
+                            <input
+                                type="radio"
+                                id="show-keyboard-conds"
+                                name="keyboard-tab"
+                                value="conds"
+                                autocomplete="off"
+                            />
+                            <div class="keyboard-tabs">
+                                <label class="tab" for="show-keyboard-erd"
+                                    >Table</label
+                                >
+                                <label class="tab" for="show-keyboard-keywords"
+                                    >Keywords</label
+                                >
+                                <label class="tab" for="show-keyboard-conds"
+                                    >Filters &amp; Values</label
+                                >
+                            </div>
+                            <div class="keyboard-tab keyboard-keywords">
+                                <span class="keyboard-key">DISTINCT</span
+                                ><span class="keyboard-key query-clause-start"
+                                    >LIMIT</span
+                                ><span class="keyboard-key sort-order">ASC</span
+                                ><span class="keyboard-key sort-order"
+                                    >DESC</span
+                                ><!--span class="keyboard-key">JOIN</span--><!--span class="keyboard-key">ON</span--><!--span class="keyboard-key">INNER</span--><!--span class="keyboard-key">OUTER</span--><!--span class="keyboard-key">LEFT</span--><!--span class="keyboard-key">AS</span-->
+                            </div>
+                            <div class="keyboard-tab keyboard-erd">
+                                <div class="erd-keys">
+                                    <span
+                                        class="keyboard-key query-clause-start"
+                                        >SELECT</span
+                                    ><span
+                                        class="keyboard-key query-clause-start"
+                                        >FROM</span
+                                    ><span
+                                        class="keyboard-key query-clause-start"
+                                        >WHERE</span
+                                    ><span
+                                        class="keyboard-key query-clause-start"
+                                        >GROUP BY</span
+                                    ><span
+                                        class="keyboard-key query-clause-start"
+                                        >HAVING</span
+                                    ><span
+                                        class="keyboard-key query-clause-start"
+                                        >ORDER BY</span
+                                    >
+                                </div>
+                                <div class="current-table"></div>
+                            </div>
+                            <div class="keyboard-tab keyboard-conds">
+                                <span class="keyboard-key">&lt;</span
+                                ><span class="keyboard-key">&gt;</span
+                                ><span class="keyboard-key">=</span
+                                ><span class="keyboard-key">!=</span
+                                ><span class="keyboard-key">NOT</span
+                                ><span class="keyboard-key">IN</span
+                                ><span class="keyboard-key">BETWEEN</span
+                                ><span class="keyboard-key">AND</span
+                                ><span class="keyboard-key">OR</span
+                                ><span class="keyboard-key">(</span
+                                ><span class="keyboard-key">)</span
+                                ><!--span class="keyboard-key">"</span--><!--span class="keyboard-key">%</span--><!--span class="keyboard-key">LIKE</span--><!--span class="keyboard-key">IS NULL</span--><!--span class="keyboard-key">IS NOT NULL</span--><br /><br />
+                                <div class="keyboard-brief"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <input
+                        type="checkbox"
+                        id="show-sql-error-message"
+                        autocomplete="off"
+                    />
+                    <div class="sql-error-overlay">
+                        <label
+                            class="special-key close-icon close-dialog"
+                            for="show-sql-error-message"
+                            >&nbsp;</label
+                        >
+                        <h2>SQL Error</h2>
+                        <label
+                            class="sql-error-message"
+                            for="show-sql-error-message"
+                        ></label>
+                <label class="button" for="show-sql-error-message">Ok</label
+                        >
+                    </div>
+                </div>
+                <div class="profile">
+                    <div class="account-details">
+                        <div class="avatar placeholder"></div>
+                        <p class="account-email">Unregistered Personnel</p>
+                        <p class="account-rank">SQL Intern</p>
+                        <p class="cases-to-next-rank"></p>
+                        <input
+                            type="radio"
+                            id="show-profile-login-options"
+                            name="profile-login-logout-options"
+                            value="profile-login"
+                            autocomplete="off"
+                            checked
+                        />
+                        <input
+                            type="radio"
+                            id="show-profile-logout-options"
+                            name="profile-login-logout-options"
+                            value="profile-logout"
+                            autocomplete="off"
+                        />
+                        <div class="profile-login-options">
+                            <p>
+                                <label
+                                    class="link-like"
+                                    for="show-buy-a-license"
+                                    >Buy a license</label
+                                >
+                                &nbsp;or&nbsp;
+                                <label class="link-like login-link"
+                                    >Login</label
+                                >
+                            </p>
+                        </div>
+                        <div class="profile-logout-options">
+                            <p>
+                                <label class="link-like logout-link"
+                                    >Logout</label
+                                >
+                            </p>
+                        </div>
+                    </div>
+                    <div class="legal-stuff">
+                        <ul>
+                            <li>
+                                <label
+                                    class="link-like"
+                                    for="show-copyright-credits"
+                                    >Copyright &amp; Credits</label
+                                >
+                            </li>
+                            &nbsp;
+                            <li>
+                                <a href="/terms" target="_blank"
+                                    ><label class="link-like"
+                                        >Terms and Conditions</label
+                                    ></a
+                                >
+                            </li>
+                            &nbsp;
+                            <li>
+                                <a href="/privacy" target="_blank"
+                                    ><label class="link-like"
+                                        >Privacy Policy</label
+                                    ></a
+                                >
+                            </li>
+                            &nbsp;
+                            <li>
+                                <a
+                                    href="https://www.youtube.com/channel/UCjx7lFzXZ9kDYk-jF-Uq2ag"
+                                    target="_blank"
+                                    ><span class="social-link social-youtube"
+                                        >&nbsp;</span
+                                    ></a
+                                >
+                            </li>
+                            &nbsp;
+                            <li>
+                                <a
+                                    href="https://www.facebook.com/sqlpd"
+                                    target="_blank"
+                                    ><span class="social-link social-facebook"
+                                        >&nbsp;</span
+                                    ></a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="reference">
+                    <div class="vertical-scrollable-container">
+                        <p class="reference-instructions">
+                            Select any of the topics below to expand for
+                            details.
+                        </p>
+                        <details>
+                            <summary>What is SQL?</summary>
+                            <p>
+                                SQL stands for Structured Query Language. It's a
+                                language used to access and manipulate data
+                                stored in tables. Each table contains columns
+                                for the different fields, and rows for the
+                                different records.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Structure of an SQL statement</summary>
+                            <p>
+                                SQL statement is composed of an ordered list of
+                                clauses such as
+                                <span class="code">SELECT</span>,
+                                <span class="code">FROM</span>,
+                                <span class="code">WHERE</span> etc. Each clause
+                                has its own syntax, and examples will be
+                                detailed below.
+                            </p>
+                            <p>
+                                An SQL statement must always end with a
+                                semicolon (
+                                <span class="code">;</span> ).
+                            </p>
+                            <p>
+                                In some cases, pressing Enter won't execute your
+                                statement and the database prompt will wait
+                                until you terminate the statement with a
+                                <span class="code">;</span> followed by Enter.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>
+                                <span class="code">SELECT</span> all data in a
+                                table
+                            </summary>
+                            <p>
+                                <span class="code-block code-addition"
+                                    >SELECT *<br />FROM employees;</span
+                                >
+                                To show or choose data from a table, we use a
+                                <span class="code">SELECT</span> statement. The
+                                statement above takes the empoloyees table (the
+                                <span class="code">FROM</span> clause) and
+                                selects or displays all columns in it, denoted
+                                by the <span class="code">*</span> after
+                                <span class="code">SELECT</span>. All the rows
+                                in the employees table will be shown since we
+                                haven't limited the row selection in any way.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>
+                                <span class="code">SELECT</span> specific
+                                columns
+                            </summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT
+                                    <span class="code-addition">name, age</span
+                                    ><br />FROM students;</span
+                                >
+                                While <span class="code">SELECT *</span> returns
+                                all the columns in the table specified after
+                                <span class="code">FROM</span>, instead of using
+                                <span class="code">*</span> you can specify a
+                                list of columns separated by commas. The command
+                                above selects only the name and age of all
+                                students in the students table, but not their
+                                email, id, or any other column in the students
+                                table.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>
+                                <span class="code">SELECT</span> without
+                                duplicate rows
+                            </summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT
+                                    <span class="code-addition">DISTINCT</span>
+                                    name<br />FROM students;</span
+                                >
+                                When selecting specific columns, we might get
+                                duplicate rows, i.e. rows containing the same
+                                values for all the fields. For example selecting
+                                student names from a table with more than one
+                                student named Bob. Following
+                                <span class="code">SELECT</span> with the
+                                <span class="code">DISTINCT</span> keyword will
+                                eliminate these duplicates.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Sort rows</summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT name, age<br />FROM friends<br />
+                                    <span class="code-addition"
+                                        >ORDER BY name, age DESC;</span
+                                    >
+                                </span>
+                                To sort the rows in a specific order, add an
+                                <span class="code">ORDER BY</span> clause with a
+                                list of comma separated fields each followed by
+                                <span class="code">ASC</span> (the default) or
+                                <span class="code">DESC</span>. The statement
+                                above displays names and ages of friends sorted
+                                alphabetically by name in ascending order and
+                                when two friends share the same name the rows
+                                are sorted by age in descending order.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>
+                                <span class="code">LIMIT</span> the number of
+                                rows
+                            </summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT name, grade<br />FROM
+                                    course_grades<br />
+                                    ORDER BY grade DESC<br />
+                                    <span class="code-addition">LIMIT 5;</span>
+                                </span>
+                                When a table contains too many rows or we are
+                                interested only in the top (or bottom) results
+                                we can limit the number of rows we get back. In
+                                the above example, after the sorting we get only
+                                the top 5 students with the highest grades in
+                                descending order.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Filter rows</summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT product<br />FROM inventory<br />
+                                    <span class="code-addition"
+                                        >WHERE code = 'ABC123';</span
+                                    >
+                                </span>
+                                When you know what you look for, you can filter
+                                the returned rows by adding a
+                                <span class="code">WHERE</span> clause after the
+                                <span class="code">FROM</span>. The
+                                <span class="code">WHERE</span> clause states a
+                                condition to hold true for all the rows to be
+                                returned. The query above will only show the
+                                products whose code is ABC123.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Conditions: numeric comparison</summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT product<br />FROM inventory<br />
+                                    WHERE
+                                    <span class="code-addition"
+                                        >amount &lt;= 10</span
+                                    >;
+                                </span>
+                                Columns or fields that contain numeric values
+                                can be used in conditions with math comparison
+                                operators such as
+                            </p>
+                            <ul>
+                                <li><span class="code">=</span>(equals)</li>
+                                <li>
+                                    <span class="code">&lt;</span>(less-than)
+                                </li>
+                                <li>
+                                    <span class="code">&lt;=</span>(less-than or
+                                    equals)
+                                </li>
+                                <li>
+                                    <span class="code">&gt;</span>(greater-than)
+                                </li>
+                                <li>
+                                    <span class="code">&gt;=</span>(greater-than
+                                    or equals)
+                                </li>
+                                <li>
+                                    <span class="code">!=</span>(does not equal)
+                                </li>
+                                <li>
+                                    <span class="code">&lt;&gt;</span>(does not
+                                    equal)
+                                </li>
+                            </ul>
+                            <p>
+                                The query above shows all products that have 10
+                                or less items left in the inventory.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Conditions: string comparison</summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT productName<br />FROM inventory<br />
+                                    WHERE
+                                    <span class="code-addition"
+                                        >productName &lt; 'B'</span
+                                    >;
+                                </span>
+                                Columns or fields that contain string values can
+                                be used in conditions with math comparison
+                                operators such as
+                            </p>
+                            <ul>
+                                <li><span class="code">=</span>(equals)</li>
+                                <li>
+                                    <span class="code">&lt;</span>(before in
+                                    dictionary order)
+                                </li>
+                                <li>
+                                    <span class="code">&lt;=</span>(before or
+                                    the same)
+                                </li>
+                                <li>
+                                    <span class="code">&gt;</span>(after in
+                                    dictionary order)
+                                </li>
+                                <li>
+                                    <span class="code">&gt;=</span>(after or the
+                                    same)
+                                </li>
+                                <li>
+                                    <span class="code">!=</span>(does not equal)
+                                </li>
+                                <li>
+                                    <span class="code">&lt;&gt;</span>(does not
+                                    equal)
+                                </li>
+                            </ul>
+                            <p>
+                                The query above shows all products whose name
+                                will start with the letter A (name comes before
+                                'B' in dictionary order).
+                            </p>
+                            <p>
+                                Note that string values in the condition should
+                                be put between single quotes. Also note that any
+                                uppercase letter is smaller (i.e. comes before)
+                                any lowercase letter.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Conditions: list possible values</summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT product<br />FROM inventory<br />
+                                    WHERE
+                                    <span class="code-addition"
+                                        >amount IN (1, 5, 10)</span
+                                    >;
+                                </span>
+                                If a column can contain one of serveral possible
+                                values, you can filter them by using the
+                                <span class="code">IN</span> or
+                                <span class="code">NOT IN</span> operators. The
+                                comma separated list of values after
+                                <span class="code">IN</span> enclosed by
+                                parenthesis specify all the values to match (or
+                                ignore).
+                            </p>
+                            <p>
+                                The query above shows all products that have
+                                either 1, 5, or 5 units left in the inventory.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Conditions: inclusive ranges</summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT product<br />FROM inventory<br />
+                                    WHERE
+                                    <span class="code-addition"
+                                        >amount BETWEEN 5 AND 9</span
+                                    >;
+                                </span>
+                                To match rows with values within a given range,
+                                use the
+                                <span class="code">BETWEEN</span> operator.
+                                Specify the range with minimum and maximum
+                                inclusive values. It works for numbers, strings,
+                                dates and time stamps.
+                            </p>
+                            <p>
+                                To match rows with values outside of a given
+                                range, use
+                                <span class="code">NOT BETWEEN</span> instead.
+                            </p>
+                            <p>
+                                The query above shows all products that have at
+                                least 5 units left in the inventory, but no more
+                                than 9.
+                            </p>
+                            <p>
+                                Note that
+                                <span class="code-block"
+                                    >amount BETWEEN 5 and 9</span
+                                >
+                                is the equivalent condition to
+                                <span class="code-block"
+                                    >amount &gt;= 5 AND amount &lt;= 9</span
+                                >
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Conditions: combining with AND</summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT product<br />FROM inventory<br />
+                                    WHERE
+                                    <span class="code-addition"
+                                        >amount &lt; 5<br />AND price &gt;
+                                        1</span
+                                    >;
+                                </span>
+                                If you want to match rows according to more than
+                                one condition, where <u>all</u> conditions have
+                                to match, use the
+                                <span class="code">AND</span> operator between
+                                the conditions. The row will match only if all
+                                conditions are truthy. If even one of the
+                                conditions is false the row would not match.
+                            </p>
+                            <p>
+                                The query above shows all products that have
+                                less than 5 units left in the inventory that
+                                their price is also greater than 1.
+                            </p>
+                            <p>
+                                Items with amount of 5 or more won't match even
+                                if their price is greater than 1. Moreover,
+                                items with less than 5 left won't match if their
+                                price is 1 or less.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Conditions: combining with OR</summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT product<br />FROM inventory<br />
+                                    WHERE
+                                    <span class="code-addition"
+                                        >amount &lt; 5<br />OR price &gt;
+                                        1</span
+                                    >;
+                                </span>
+                                If you want to match rows according to more than
+                                one condition, where <u>at least one</u> of the
+                                conditions have to match, use the
+                                <span class="code">OR</span> operator between
+                                the conditions. The row will match if one of the
+                                conditions is true even if all the other
+                                conditions are false. The row will not match
+                                only if all the conditions are false.
+                            </p>
+                            <p>
+                                The query above shows all products that have
+                                less than 5 units left in the inventory as well
+                                as shows all the products that cost more than 1.
+                            </p>
+                            <p>
+                                The only items not matching are those that both
+                                have 5 or more units left as well as costing 1
+                                or less.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Conditions: mixing AND and OR</summary>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT product<br />FROM inventory<br />
+                                    WHERE
+                                    <span class="code-addition">
+                                        amount &lt; 5<br />OR name = 'paper'<br />AND
+                                        price &gt; 1</span
+                                    >;
+                                </span>
+                                When using both
+                                <span class="code">AND</span> and
+                                <span class="code">OR</span> it's important to
+                                know that <span class="code">AND</span> has
+                                higher precedence. That means that like in Maths
+                                where multiplication is evaluated before
+                                addition, the <span class="code">AND</span> will
+                                be evaluated before the
+                                <span class="code">OR</span>.
+                            </p>
+                            <p>
+                                The query above matches all products that are
+                                named paper whose price is also higher than 1,
+                                in addition to products that have more than 5
+                                units left in the inventory.
+                            </p>
+                            <p>
+                                If we want the <span class="code">OR</span> to
+                                be evaluated first, we can use brackets ( ).
+                            </p>
+                            <p>
+                                <span class="code-block"
+                                    >SELECT product<br />FROM inventory<br />WHERE
+                                    <span class="code-addition">(</span>amount
+                                    &lt; 5<br />OR name = 'paper'<span
+                                        class="code-addition"
+                                        >)</span
+                                    ><br />AND price &gt; 1;
+                                </span>
+                                This query will matches all products that have
+                                more than 5 units left or named paper, and in
+                                both cases the price has to be higher than 1.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+                <div class="sending-modal-overlay">
+                    <div class="messages">
+                        <p class="sending-message">Sending brief...</p>
+                        <p class="awaiting-response">Awaiting response...</p>
+                    </div>
+                    <div class="spinners">
+                        <div class="sending-progress">
+                            <span class="sending-progress-meter"></span>
+                        </div>
+                        <div class="spinner">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="solved-overlay">
+                    <input
+                        type="radio"
+                        id="show-take-rank-test"
+                        name="next-case-or-rank-test"
+                        value="rank-test"
+                        autocomplete="off"
+                    />
+                    <input
+                        type="radio"
+                        id="show-advance-to-next-case"
+                        name="next-case-or-rank-test"
+                        value="next-case"
+                        autocomplete="off"
+                    />
+                    <input
+                        type="radio"
+                        id="show-end-of-free-trial"
+                        name="next-case-or-rank-test"
+                        value="end-of-free-trial"
+                        autocomplete="off"
+                    />
+                    <div class="stamp solved-stamp">
+                        <p class="solved-note">SOLVED</p>
+                        <p class="solved-qualified-note">
+                            Qualified for next rank!
+                        </p>
+                    </div>
+                    <div class="solved-content">
+                        <p class="solved-message"></p>
+                        <label
+                            class="button advance-to-next-case"
+                            for="show-no-sending-modal"
+                            >Advance to next case</label
+                        >
+                        <label
+                            class="button take-rank-test"
+                            for="show-no-sending-modal"
+                            >Take rank test!</label
+                        >
+                    </div>
+                </div>
+                <div class="retry-overlay">
+                    <span class="stamp retry-stamp">Try again</span>
+                    <div class="retry-content">
+                        <p class="retry-message"></p>
+                        <label
+                            class="button retry-case"
+                            for="show-no-sending-modal"
+                            >Return to case</label
+                        >
+                    </div>
+                </div>
+                <div class="copyright-credits-overlay">
+                    <label
+                        class="special-key close-icon close-dialog"
+                        for="show-copyright-credits"
+                        >&nbsp;</label
+                    >
+                    <div
+                        class="copyright-credits-content vertical-scrollable-container"
+                    >
+                        <h2>Copyright &amp; Credits</h2>
+                        <h3>Game Design &amp; Programming</h3>
+                        <p>
+                            This game was designed and programmed by Doron
+                            Linder.
+                        </p>
+                        <p>
+                            &copy; Wrapped Castle Limited, 2020. All rights
+                            reserved.
+                        </p>
+                        <p>
+                            Wrapped Castle Limited is a company registered in
+                            England and Wales with company number 10100834.
+                        </p>
+                        <p>
+                            For more information, read the site's
+                            <a href="terms" target="_blank">Terms of Use</a>,
+                            and
+                            <a href="privacy" target="_blank">Privacy Policy</a
+                            >.
+                        </p>
+                        <p>
+                            For further questions, please contact me at
+                            <script>
+                                document.write(
+                                    '<a href="mailt' +
+                                        "o:cont" +
+                                        "act@sq" +
+                                        "lp" +
+                                        'd.com">con' +
+                                        "tact@sql" +
+                                        "pd.com</a>"
+                                );
+                            </script>
+                        </p>
+                        <h3>Artwork</h3>
+                        <p>
+                            The following artworks are used under the creative
+                            commons license:
+                        </p>
+                        <p></p>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://material.io/resources/icons/"
+                                    target="_blank"
+                                    rel="nofollow"
+                                    >Material Design Icons</a
+                                >
+                                for icons such as the guide, backspace, etc.
+                            </li>
+                            <li>
+                                Logo design based on
+                                <a
+                                    href="https://feathericons.com/?query=shield"
+                                    target="_blank"
+                                    rel="nofollow"
+                                    >Shield icon from FeatherIcons.com</a
+                                >
+                            </li>
+                        </ul>
+                        <h3 id="sounds">Sounds</h3>
+                        <p>
+                            The following sounds are used under the creative
+                            commons license:
+                        </p>
+                        <ul>
+                            <li>
+                                Solved stamping -
+                                <a
+                                    href="https://freesound.org/s/362624/"
+                                    target="_blank"
+                                    rel="nofollow"
+                                    >Stamp</a
+                                >
+                                by kermite607
+                            </li>
+                            <li>
+                                Try again stamping -
+                                <a
+                                    href="https://freesound.org/s/347323/"
+                                    target="_blank"
+                                    rel="nofollow"
+                                    >thick-stamp-sub.wav</a
+                                >
+                                by newagesoup
+                            </li>
+                            <li>
+                                Clapping -
+                                <a
+                                    href="https://freesound.org/s/367958/"
+                                    target="_blank"
+                                    rel="nofollow"
+                                    >small_clapping_01.wav</a
+                                >
+                                by joedeshon (cropped)
+                            </li>
+                        </ul>
+                        <p class="button-container">
+                            <label class="button" for="show-copyright-credits"
+                                >Return to game</label
+                            >
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="landscape-orientation">
+                <header>
+                    <h1>
+                        <span class="title-sql">SQL</span>
+                        <span>Police Department</span>
+                    </h1>
+                    <p class="use-portrait">Please use device vertically</p>
+                </header>
+                <footer>
+                    <p>
+                        &copy;&nbsp;Wrapped&nbsp;Castle&nbsp;Limited&nbsp;-&nbsp;2020.
+                        All&nbsp;rights&nbsp;reserved.
+                    </p>
+                </footer>
+            </section>
+            <section class="rank-test">
+                <input
+                    type="radio"
+                    id="show-rank-test-unknown"
+                    name="rank-test-sucess-or-failure"
+                    value="rank-test-unknown"
+                    autocomplete="off"
+                />
+                <input
+                    type="radio"
+                    id="show-rank-test-success"
+                    name="rank-test-sucess-or-failure"
+                    value="rank-test-success"
+                    autocomplete="off"
+                />
+                <input
+                    type="radio"
+                    id="show-rank-test-failure"
+                    name="rank-test-sucess-or-failure"
+                    value="rank-test-failure"
+                    autocomplete="off"
+                />
+                <input
+                    type="radio"
+                    id="show-rank-test-sending-modal"
+                    name="rank-test-sucess-or-failure"
+                    value="rank-test-sending-modal"
+                    autocomplete="off"
+                />
+                <div class="rank-test-content">
+                    <p class="rank-test-question"></p>
+                    <ol class="rank-test-options-list"></ol>
+                </div>
+                <div class="rank-test-success-overlay">
+                    <div class="stamp solved-stamp">
+                        <p class="approved-note">APPROVED</p>
+                        <p class="approved-qualified-note"></p>
+                    </div>
+                    <div class="solved-content">
+                        <p class="approve-message"></p>
+                        <p>
+                            You have been promoted to the rank of
+                            <span class="approved-rank"></span>!
+                        </p>
+                        <label
+                            class="button advance-to-next-case"
+                            for="show-rank-test-unknown"
+                            >Advance to next case</label
+                        >
+                    </div>
+                </div>
+                <div class="rank-test-failure-overlay">
+                    <span class="stamp retry-stamp">Declined</span>
+                    <div class="retry-content">
+                        <p class="decline-message"></p>
+                        <p>
+                            Solve more cases to qualify for the next rank and
+                            try again.
+                        </p>
+                        <label
+                            class="button advance-to-next-case"
+                            for="show-rank-test-unknown"
+                            >Advance to next case</label
+                        >
+                    </div>
+                </div>
+                <div class="rank-test-sending-overlay">
+                    <div class="messages">
+                        <p class="sending-message">Submitting test...</p>
+                        <p class="awaiting-response">Awaiting response...</p>
+                    </div>
+                    <div class="spinners">
+                        <div class="sending-progress">
+                            <span class="sending-progress-meter"></span>
+                        </div>
+                        <div class="spinner">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logging In dialog -->
+
+            <input
+                type="checkbox"
+                id="show-logging-in"
+                value="logging-in"
+                autocomplete="off"
+            />
+            <input
+                type="checkbox"
+                id="show-logging-out"
+                value="logging-out"
+                autocomplete="off"
+            />
+            <div class="logging-in-out-overlay">
+                <div class="messages">
+                    <p class="logging-in-message">Logging in...</p>
+                    <p class="logging-out-message">Logging out...</p>
+                </div>
+                <div class="spinners">
+                    <div class="spinner">
+                        <div class="rect1"></div>
+                        <div class="rect2"></div>
+                        <div class="rect3"></div>
+                        <div class="rect4"></div>
+                        <div class="rect5"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buy a license dialog -->
+            <!-- #show-buy-a-license had to be moved up to use ~ selector in landscape -->
+
+            <div class="buy-a-license-overlay">
+                <label
+                    class="special-key close-icon close-dialog"
+                    for="show-buy-a-license"
+                    >&nbsp;</label
+                >
+                <input
+                    type="radio"
+                    id="show-buy-intro-step"
+                    name="buy-steps"
+                    value="buy-intro-step"
+                    autocomplete="off"
+                    checked
+                />
+                <input
+                    type="radio"
+                    id="show-buy-still-in-development-step"
+                    name="buy-steps"
+                    value="buy-development-step"
+                    autocomplete="off"
+                />
+                <input
+                    type="radio"
+                    id="show-buy-email-step"
+                    name="buy-steps"
+                    value="buy-email-step"
+                    autocomplete="off"
+                />
+                <input
+                    type="radio"
+                    id="show-buy-password-step"
+                    name="buy-steps"
+                    value="buy-password-step"
+                    autocomplete="off"
+                />
+                <input
+                    type="radio"
+                    id="show-buy-paypal-step"
+                    name="buy-steps"
+                    value="buy-paypal-step"
+                    autocomplete="off"
+                />
+                <input
+                    type="radio"
+                    id="show-buy-thank-you-step"
+                    name="buy-steps"
+                    value="buy-thank-you-step"
+                    autocomplete="off"
+                />
+                <input
+                    type="radio"
+                    id="show-buy-error-step"
+                    name="buy-steps"
+                    value="buy-error-step"
+                    autocomplete="off"
+                />
+                <div class="buy-intro-step">
+                    <h2>
+                        Buy now and enjoy<br /><span class="sqlpd"
+                            >longer access</span
+                        >
+                    </h2>
+                    <p class="license-details">
+                        Licenses usually last 6 months but if you join today,
+                        the 6 months countdown will start only when game
+                        development ends!
+                    </p>
+                    <p class="offer">
+                        <span class="for-only">Now for only $20</span>
+                    </p>
+                    <label class="button" for="show-buy-email-step"
+                        >I want it</label
+                    >
+                </div>
+                <div class="buy-email-step">
+                    <form>
+                        <p>
+                            Please enter an email address to be used to login to
+                            the game, for password resets and license related
+                            emails.
+                        </p>
+                        <input
+                            type="email"
+                            id="user-email"
+                            name="user-email"
+                            placeholder="Your email address"
+                            autocomplete="off"
+                        />
+                        <input
+                            type="hidden"
+                            id="buy-solved-cases"
+                            name="buy-solved-cases"
+                            autocomplete="off"
+                            value="0"
+                        />
+                        <div class="error-message"></div>
+                        <div class="terms-row">
+                            <input
+                                type="checkbox"
+                                id="accept-terms"
+                                name="accept-terms"
+                                autocomplete="off"
+                            />
+                            <label for="accept-terms">
+                                I accept the
+                                <a href="/terms" target="_blank"
+                                    ><label class="link-like"
+                                        >Terms of Use</label
+                                    ></a
+                                >
+                                and
+                                <a href="/privacy" target="_blank"
+                                    ><label class="link-like"
+                                        >Privacy Policy</label
+                                    ></a
+                                >
+                            </label>
+            </div>
+            <button class="button">Continue</button>
+            </form>
+            </div>
+            <div class="buy-password-step">
+                <form>
+                    <p>
+                        Choose a password with at least 8 characters, containing lower case letters, upper case letters and numbers.
+                    </p>
+                    <input type="password" id="user-password" name="user-password" placeholder="Your chosen password" autocomplete="off" />
+                    <div class="error-message"></div>
+                    <button class="button">Proceed to payment</button>
+                </form>
+            </div>
+            <div class="buy-paypal-step buy-a-license-content vertical-scrollable-container">
+                <div id="paypal-button-container"></div>
+            </div>
+            <div class="buy-thank-you-step">
+                <h2>Thank you!</h2>
+                <p>Payment completed successfully.</p>
+                <ul class="license-details">
+                    <li>
+                        Email:
+                        <span class="purchase-detail purchase-email"></span>
+                    </li>
+                    <li>
+                        Order ID:
+                        <span class="purchase-detail purchase-orderid"></span>
+                    </li>
+                    <li>
+                        Capture ID:
+                        <span class="purchase-detail purchase-captureid"></span>
+                    </li>
+                    <li class="hidden">
+                        License Expiration:
+                        <span class="purchase-detail purchase-expiration"></span>
+                    </li>
+                </ul>
+
+                <label class="button after-buy-solve-cases" for="show-buy-a-license">Solve cases!</label
+                    >
+                </div>
+                <div class="buy-error-step">
+                    <h2>Payment Failed</h2>
+                    <p>The reason given was:</p>
+                    <p class="error-message"></p>
+                    <p>
+                        If no funds were taken from your account please try
+                        again. If any funds were taken or the problem persists,
+                        please email
+                        <script>
+                            document.write(
+                                "<a href='mailt" +
+                                    "o:supp" +
+                                    "ort@sql" +
+                                    "pd.com'" +
+                                    "class='link-like' target='_blank'" +
+                                    ">sup" +
+                                    "port@sqlp" +
+                                    "d.com</a>"
+                            );
+                        </script>
+                        .
+                    </p>
+                </div>
+            </div>
+
+            <!-- Still in Development dialog -->
+
+            <input
+                type="checkbox"
+                id="show-still-in-development"
+                value="still-in-development"
+                autocomplete="off"
+            />
+            <div class="still-in-development-overlay">
+                <div class="still-in-development-content">
+                    <h2>Well done!</h2>
+                    <p>You have reached the last level released so far!</p>
+                    <p class="but">But there is more to come!</p>
+                    <p>
+                        More levels are in the works, covering aggregate
+                        functions, grouping, joining multiple tables and more.
+                        You will be notified when new levels are released.
+                    </p>
+                    <p>
+                        In the meantime, you can practice. For the rest of this
+                        session, cases will be randomly selected from levels
+                        you've already done.
+                    </p>
+                    <label class="button" for="show-still-in-development"
+                        >Switch to Practice Mode</label
+                    >
+                </div>
+            </div>
+        </main>
+        <script
+            async
+            defer
+            src="https://cdn.simpleanalytics.io/hello.js"
+        ></script>
+        <noscript
+            ><img src="https://api.simpleanalytics.io/hello.gif" alt=""
+        /></noscript>
+        
+    </body>
+</html>
